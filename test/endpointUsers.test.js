@@ -7,11 +7,11 @@ describe('Test endpoint Users', () => {
   it('Test get /register', () => {
     request(app)
       .post('/register') // endpoint yg akan di testing
-      .field('email', 'unit@testing127')
+      .field('email', 'unit@testing144')
       .field('password', '123ab')
       .field('phone', '645635795')
       .attach('image', './test/upload/testing.jpg')
-      .field('name', 'unit testing127')
+      .field('name', 'unit testing144')
       .field('address', 'Ngawi')
       .field('first_name', 'from')
       .field('last_name', 'testing')
@@ -207,7 +207,7 @@ describe('Test endpoint Users', () => {
   it('Test Update /users/:id', () => {
     getToken.user().then((token) => {
       request(app)
-        .patch('/users/484')
+        .patch('/users/507')
         .set('token', token)
         .set('Content-Type', 'multipart/form-data')
         .field('email', 'fromUpdate1@testing.ceo')
@@ -261,7 +261,7 @@ describe('Test endpoint Users', () => {
   it('Test delete users', () => {
     getToken.admin().then((token) => {
       request(app)
-        .delete('/users/497')
+        .delete('/users/484')
         .set('token', token)
         .expect('Content-Type', /json/)
         .expect(200)
