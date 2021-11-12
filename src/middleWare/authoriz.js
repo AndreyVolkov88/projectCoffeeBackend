@@ -8,7 +8,6 @@ const authorization = {
       .getDetail(id)
       .then((result) => {
         const { level } = result.data[0];
-        console.log(level);
         if (level == 1) {
           errLogin(res, 'Anda Bukan Admin');
         } else {

@@ -16,8 +16,7 @@ const products = {
       const search = query.search === undefined ? '' : query.search;
       const field = query.field === undefined ? 'id' : query.field;
       const typeSort = query.sort === undefined ? 'ASC' : query.sort;
-      // eslint-disable-next-line radix
-      const limit = query.limit === undefined ? '5' : query.limit;
+      const limit = query.limit === undefined ? '50' : query.limit;
       const offset = query.page === undefined || query.page === 1 ? 0 : (query.page - 1) * limit;
       client.get('products', (err, resultRedis) => {
         if (!resultRedis) {
@@ -35,7 +34,8 @@ const products = {
           });
         } else {
           const dataRes = JSON.parse(resultRedis);
-          const dataFilter = _.filter(dataRes, (e) => (e.name_product.includes(search)));
+          const dataSearch = search.toLowerCase()
+          const dataFilter = _.filter(dataRes, (e) => (e.name_product.toLowerCase().includes(dataSearch)));
           const sort = _.sortBy(dataFilter, typeSort);
           const pagination = _.slice(sort, offset, offset + limit);
           const response = {
@@ -45,7 +45,7 @@ const products = {
             limit,
             page: req.query.page,
           };
-          success(res, response, 200, 'Get all users success');
+          success(res, response, 200, 'Get all Products success');
         }
       });
     } catch (err) {
@@ -70,7 +70,7 @@ const products = {
           // eslint-disable-next-line no-unused-expressions
           // eslint-disable-next-line eqeqeq
           const dataFilter = _.filter(dataRes, (e) => (e.id == id ? e : undefined));
-          success(res, dataFilter, 200, 'Get details user Succes');
+          success(res, dataFilter, 200, 'Get details product Succes');
         }
       });
     } catch (err) {

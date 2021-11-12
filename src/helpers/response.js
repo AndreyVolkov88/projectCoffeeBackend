@@ -8,13 +8,13 @@ const response = {
     };
     res.status(200).json(resp);
   },
-  sucLog: (res, data, token, code, message) => {
+  sucLog: (res, data, tkn, code, message) => {
     const resp = {
       success: true,
-      data,
+      data: {...data[0], token:  tkn},
       code,
       message,
-      token,
+      // token,
     };
     res.status(200).json(resp);
   },

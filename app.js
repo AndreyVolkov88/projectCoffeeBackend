@@ -17,6 +17,7 @@ app.use(productsRouter);
 // app.use(sizeRouter);
 app.use(transactionRouter);
 // app.use(detailsTransactionRouter);
+app.use(express.static(__dirname + '/uploads'))
 
 app.listen(3004, () => {
   // eslint-disable-next-line no-console
