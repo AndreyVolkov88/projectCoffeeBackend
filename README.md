@@ -30,7 +30,7 @@ npm install express body-parser dot-env mysql2 nodemon
 
 **Standard API**
 
-[click me](https://github.com/roufurrohim/backend-with-nodejs/blob/master/api-documents.json)
+[click me](https://github.com/roufurrohim/tester/blob/master/Coffee-shop.postman_collection.json)
 
 
 **.env example**
