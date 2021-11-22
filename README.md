@@ -1,4 +1,4 @@
-# BACKEND APP WITH NODEJS
+# Backend Coffee Shop
 
 Cara instalasi sebagai berikut:
 
