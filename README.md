@@ -5,7 +5,7 @@ Cara instalasi sebagai berikut:
 - Clone repository ini
 
 ```cli
-git clone https://github.com/roufurrohim/tester
+git clone https://github.com/AndreyVolkov88/projectCoffeeBackend
 ```
 
 - Instalasi depedensi :
